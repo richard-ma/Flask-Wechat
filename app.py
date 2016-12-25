@@ -7,7 +7,7 @@ from wechat_sdk import WechatConf, WechatBasic
 app = Flask(__name__)
 
 conf = WechatConf(
-    #token = os.environ['WECHAT_TOKEN'],
+    token = os.environ['WECHAT_TOKEN'],
     appid = os.environ['WECHAT_APPID'],
     appsecret = os.environ['WECHAT_SECRET'],
     #encrypt_mod = os.environ['WECHAT_ENCRYPT_MOD'], # normal/compatible/safe -> 明文/兼容/安全
