@@ -6,6 +6,9 @@ app = Flask(__name__)
 def index():
     return "index"
 
-@app.route('/echo')
+@app.route('/hello')
 def hello_world():
-    return "echo"
+    return "hello"
+
+if __name__ == '__main__':
+    app.run()
