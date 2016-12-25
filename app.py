@@ -9,7 +9,7 @@ app = Flask(__name__)
 conf = WechatConf(
     token = os.environ['WECHAT_TOKEN'],
     appid = os.environ['WECHAT_APPID'],
-    appsecret = os.environ['WECHAT_SECRET'],
+    appsecret = os.environ['WECHAT_APPSECRET'],
     #encrypt_mod = os.environ['WECHAT_ENCRYPT_MOD'], # normal/compatible/safe -> 明文/兼容/安全
     #encoding_aes_key = os.environ['WECHAT_ENCODING_AES_KEY'],
 )
