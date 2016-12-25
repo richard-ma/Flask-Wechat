@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 
+import os
 from flask import Flask, request
 from wechat_sdk import WechatConf, WechatBasic
 
 app = Flask(__name__)
 
 conf = WechatConf(
-    #token = app.config.from_envvar('WECHAT_TOKEN'),
-    appid = app.config.from_envvar('WECHAT_APPID'),
-    appsecret = app.config.from_envvar('WECHAT_SECRET'),
-    #encrypt_mod = app.config.from_envvar('WECHAT_ENCRYPT_MOD'), # normal/compatible/safe -> 明文/兼容/安全
-    #encoding_aes_key = app.config.from_envvar('WECHAT_ENCODING_AES_KEY'),
+    #token = os.environ['WECHAT_TOKEN'],
+    appid = os.environ['WECHAT_APPID'],
+    appsecret = os.environ['WECHAT_SECRET'],
+    #encrypt_mod = os.environ['WECHAT_ENCRYPT_MOD'], # normal/compatible/safe -> 明文/兼容/安全
+    #encoding_aes_key = os.environ['WECHAT_ENCODING_AES_KEY'],
 )
 wechat = WechatBasic(conf = conf)
 
