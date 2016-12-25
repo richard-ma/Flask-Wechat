@@ -31,5 +31,9 @@ def index():
 def hello_world():
     return "hello"
 
+@app.route('/env')
+def get_env():
+    return str(os.environ)
+
 if __name__ == '__main__':
     app.run()
