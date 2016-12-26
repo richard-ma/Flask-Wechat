@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from flask import Flask, request
+from flask import Flask, request, abort
 from wechat_sdk import WechatConf, WechatBasic
 
 app = Flask(__name__)
@@ -25,7 +25,7 @@ def index():
     if wechat.check_signature(signature, timestamp, nonce):
         return echostr
     else:
-        return 'Signature check failed'
+        abort(404)
 
 @app.route('/hello')
 def hello_world():

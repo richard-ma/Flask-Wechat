@@ -13,13 +13,14 @@ class FlaskWechatTestCase(unittest.TestCase):
 
     def testCheckSignature(self):
         rv = self.app.get('/')
-        assert 'Signature check failed' == rv.data
+        assert 404 == rv.status_code
 
         query = {
-            'signature': '',
-            'timestamp': '',
-            'nonce': '',
-            'echostr': '',
+            'signature': 'failed',
+            'timestamp': 'failed',
+            'nonce': 'failed',
+            'echostr': 'failed',
         }
-        rv = self.app.get('/%s' % (urlencode(query)))
-        assert 'Signature check failed' == rv.data
+        queryStr = '/%s' % (urlencode(query))
+        rv = self.app.get(queryStr)
+        assert 404 == rv.status_code
