@@ -2,7 +2,7 @@
 
 from urllib import urlencode
 import unittest
-import app
+from flask_wechat import app
 
 class FlaskWechatTestCase(unittest.TestCase):
     def setUp(self):
