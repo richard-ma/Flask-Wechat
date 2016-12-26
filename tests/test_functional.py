@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from urllib import urlencode
 import unittest
 from flask_wechat import app
+try:
+    from urllib import urlencode
+except: #Python3
+    from urllib.parse import urlencode
 
 class FlaskWechatTestCase(unittest.TestCase):
     def setUp(self):
