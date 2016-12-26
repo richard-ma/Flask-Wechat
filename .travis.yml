@@ -15,3 +15,7 @@ install:
 
 # command to run tests
 script: pytest
+
+addons:
+  code_climate:
+    repo_token: cb27e051beab6162957ce7cc0bee86118cb40d355de3ab62e211e25e82954021
